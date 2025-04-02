@@ -1,7 +1,8 @@
 /* Universal Styles */
-*{
+* {
   box-sizing: border-box;
 }
+
 body {
   background-image: url("https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_foodlogo.png");
   text-align: center;
@@ -14,7 +15,6 @@ a {
 }
 
 /* Navigation */
-
 nav {
   text-align: center;
 }
@@ -22,7 +22,7 @@ nav {
 nav img {
   display: block;
   width: 180px;
-  margin: center;
+  margin: 0 auto;
 }
 
 nav span {
@@ -38,7 +38,6 @@ nav a {
 }
 
 /* Content Container */
-
 .content {
   width: 100%;
   height: 500px;
@@ -47,7 +46,6 @@ nav a {
 }
 
 /* Content Header */
-
 .header {
   background-image: url("https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burgerphoto.jpeg");
   background-position: center;
@@ -68,10 +66,9 @@ nav a {
 }
 
 /* Content Body */
-
 .content .body {
   width: 90%;
-  margin: 0 center;
+  margin: 0 auto;
 }
 
 .body p {
@@ -83,7 +80,6 @@ nav a {
 }
 
 /* Content Button */
-
 .button {
   border-radius: 4px;
   color: #05A8AA;
@@ -102,10 +98,8 @@ nav a {
 }
 
 /* Content Nutrition */
-
 ul.nutrition {
   padding: 20px;
-
 }
 
 ul.nutrition li {
@@ -129,4 +123,70 @@ ul.nutrition li {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 2px;
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+  /* Make the content container less wide */
+  .content {
+    width: 95%;
+  }
+
+  /* Adjust the font size and layout for smaller screens */
+  .header h1 {
+    font-size: 32px;
+    width: 90%;
+  }
+
+  /* Adjust the button to fit the screen */
+  .button {
+    width: 180px;
+    padding: 15px;
+  }
+
+  /* Stack the navigation links vertically on small screens */
+  nav span {
+    display: block;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  /* Adjust the image in the navigation */
+  nav img {
+    width: 150px;
+  }
+
+  /* Stack the nutrition information vertically on smaller screens */
+  ul.nutrition li {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Adjust the padding and margins for mobile screens */
+  .body p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .button {
+    width: 160px;
+    padding: 12px;
+  }
+
+  ul.nutrition li {
+    padding: 8px 15px;
+  }
+
+  .body p {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
