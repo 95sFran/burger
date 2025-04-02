@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style_form.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <title>Personaliza tu hamburguesa</title>
+</head>
+<body>
+    <section id="overlay">
+        <img src="https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_burger-logo.svg" alt="Davie's Burgers Logo" id="logo">
+        <hr>
+        <form id="burgerForm">
+            <h1>¡Crea tu hamburguesa!</h1>
+
+            <section class="protein">
+                <label for="patty">Tipo de carne:</label>
+                <select name="patty" id="patty">
+                    <option value="pollo">Pollo</option>
+                    <option value="cerdo">Cerdo</option>
+                    <option value="ternera">Ternera</option>
+                    <option value="vegetal">Vegetal</option>
+                </select>
+            </section>
+
+            <hr>
+            <section class="patties">
+                <label for="amount">¿Cuántas carnes quieres?</label>
+                <input type="number" name="amount" id="amount" min="1" max="5">
+            </section>
+
+            <hr>
+            <section class="cooked">
+                <label for="doneness">¿Qué tan cocida la quieres?</label>
+                <br>
+                <span>Poco hecha</span>
+                <input type="range" name="doneness" id="doneness" value="3" min="1" max="5">
+                <span>Muy hecha</span>
+            </section>
+
+            <hr>
+            <section class="toppings">
+                <span>¿Qué ingredientes quieres?</span>
+                <br>
+                <input type="checkbox" name="topping" id="lettuce" value="lechuga">
+                <label for="lettuce">Lechuga</label>
+                <input type="checkbox" name="topping" id="tomato" value="tomate">
+                <label for="tomato">Tomate</label>
+                <input type="checkbox" name="topping" id="onion" value="cebolla">
+                <label for="onion">Cebolla</label>
+            </section>
+
+            <hr>
+            <section class="cheesy">
+                <span>¿Quieres queso?</span>
+                <br>
+                <input id="yes" type="radio" name="cheese" value="yes">
+                <label for="yes">Sí</label>
+                <input id="no" type="radio" name="cheese" value="no">
+                <label for="no">No</label>
+            </section>
+
+            <hr>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Pantalla de agradecimiento oculta -->
+        <div id="thankYouMessage" style="display: none;">
+            <h2>Thanks for your order!</h2>
+            <p>We are preparing your burger🍔</p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("burgerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+            document.getElementById("burgerForm").style.display = "none"; // Oculta el formulario
+            document.getElementById("thankYouMessage").style.display = "block"; // Muestra el mensaje de gracias
+        });
+    </script>
+</body>
+</html>
